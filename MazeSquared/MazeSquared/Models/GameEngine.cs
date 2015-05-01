@@ -8,13 +8,13 @@ namespace MazeSquared.Models
 {
     public class GameEngine
     {
-        public Dictionary<int, string> gameBoard = new Dictionary<int, string>();
+        public static Dictionary<int, string> gameBoard = new Dictionary<int, string>();
         
-        public Random rnd = new Random();
+        public static Random rnd = new Random();
         
-        public int weIsUpToHere;
+        public static int weIsUpToHere;
 
-        public GameEngine()
+        static GameEngine()
         {
             for (int i = 0; i < 64; i++)
             {
@@ -22,7 +22,7 @@ namespace MazeSquared.Models
             }
         }
 
-        public int randomStart()
+        public static int randomStart()
         {
             int j = rnd.Next(0, 63);
             gameBoard.Remove(j);
@@ -30,7 +30,7 @@ namespace MazeSquared.Models
             return weIsUpToHere = j;
         }
 
-        public int activeSquare()
+        public static int activeSquare()
         {
             int weGo = rnd.Next(0, 3);
             List<int> activatedSquare = new List<int>();
@@ -45,7 +45,7 @@ namespace MazeSquared.Models
             return weIsUpToHere=low;
         }
 
-        public int nextSquare()
+        public static int nextSquare()
         {
             int inWeGo = rnd.Next(0, 3);
             List<int> nextedSquare = new List<int>();
