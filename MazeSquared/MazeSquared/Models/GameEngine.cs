@@ -9,8 +9,10 @@ namespace MazeSquared.Models
     public class GameEngine
     {
         public Dictionary<int, string> gameBoard = new Dictionary<int, string>();
-        public List<int> badsquare;
+        
         public Random rnd = new Random();
+        
+        public int weIsUpToHere;
 
         public GameEngine()
         {
@@ -20,24 +22,27 @@ namespace MazeSquared.Models
             }
         }
 
-        public int randmonStart()
+        public int randomStart()
         {
             int j = rnd.Next(0, 63);
-            gameBoard.Add(j, "start");
-            return j;
+            gameBoard.Remove(j);
+            gameBoard.Add(j,"start");
+            return weIsUpToHere = j;
         }
 
         public int activeSquare()
         {
             int weGo = rnd.Next(0, 3);
             List<int> activatedSquare = new List<int>();
-            activatedSquare.Add(randmonStart()- 1);
-            activatedSquare.Add(randmonStart() + 1);
-            activatedSquare.Add(randmonStart() + 8);
-            activatedSquare.Add(randmonStart() - 8);
+            activatedSquare.Add(weIsUpToHere- 1);
+            activatedSquare.Add(weIsUpToHere + 1);
+            activatedSquare.Add(weIsUpToHere + 8);
+            activatedSquare.Add(weIsUpToHere - 8);
+            
             int low = activatedSquare[weGo];
+            gameBoard.Remove(low);
             gameBoard.Add(low,"active");
-            return activatedSquare[weGo];
+            return weIsUpToHere=low;
         }
 
         public int nextSquare()
@@ -49,8 +54,9 @@ namespace MazeSquared.Models
             nextedSquare.Add(activeSquare() + 8);
             nextedSquare.Add(activeSquare() - 8);
             int low = nextedSquare[inWeGo];
+            gameBoard.Remove(low);
             gameBoard.Add(low, "active");
-            return low;
+            return weIsUpToHere = low;
         }
 
     }
