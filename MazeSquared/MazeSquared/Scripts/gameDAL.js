@@ -15,14 +15,12 @@
             });
         
         }
-
         var nextSquare = function () {
             $.get({
                 url: "api/GetNextSquare"
             }).done(function (gettedNextSquare) {
                 $('.' + gettedNextSquare).addClass('nextSquare');
             });
-
         }
     })
  

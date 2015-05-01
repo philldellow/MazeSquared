@@ -14,7 +14,7 @@ namespace MazeSquared.Tests.Models
             GameEngine testEngine= new GameEngine();
             //act
             var expected = "deNada";
-            var actual = testEngine.gameBoard[34];
+            var actual = MazeSquared.Models.GameEngine.gameBoard[34];
             //assert
             Assert.AreEqual(expected,actual);
         }
@@ -24,9 +24,9 @@ namespace MazeSquared.Tests.Models
         {
             //arrange
             GameEngine testEngine = new GameEngine();
-            testEngine.randomStart();
+            MazeSquared.Models.GameEngine.randomStart();
             //act
-            var expected = testEngine.gameBoard.ContainsValue("start") ;
+            var expected = MazeSquared.Models.GameEngine.gameBoard.ContainsValue("start") ;
             //assert
             Assert.IsTrue(expected);
         }
@@ -36,9 +36,9 @@ namespace MazeSquared.Tests.Models
         {
             //arrange
             GameEngine testEngine = new GameEngine();
-            testEngine.activeSquare();
+            MazeSquared.Models.GameEngine.activeSquare();
             //act
-            var expected = testEngine.gameBoard.ContainsValue("active");
+            var expected = MazeSquared.Models.GameEngine.gameBoard.ContainsValue("active");
             //assert
             Assert.IsTrue(expected);
         }
@@ -48,9 +48,9 @@ namespace MazeSquared.Tests.Models
         {
             //arrange
             GameEngine testEngine = new GameEngine();
-            testEngine.nextSquare();
+            MazeSquared.Models.GameEngine.nextSquare();
             //act
-            var expected = testEngine.gameBoard.ContainsValue("active");
+            var expected = MazeSquared.Models.GameEngine.gameBoard.ContainsValue("active");
             //assert
             Assert.IsTrue(expected);
           
@@ -63,13 +63,13 @@ namespace MazeSquared.Tests.Models
             GameEngine testEngine = new GameEngine();
 
             //act
-            var firstroll = testEngine.weIsUpToHere;
-            testEngine.randomStart();
-            var secondroll = testEngine.weIsUpToHere;
-            testEngine.nextSquare();
-            var thirdroll = testEngine.weIsUpToHere;
-            testEngine.activeSquare();
-            var fourthroll = testEngine.weIsUpToHere;
+            var firstroll = MazeSquared.Models.GameEngine.weIsUpToHere;
+            MazeSquared.Models.GameEngine.randomStart();
+            var secondroll = MazeSquared.Models.GameEngine.weIsUpToHere;
+            MazeSquared.Models.GameEngine.nextSquare();
+            var thirdroll = MazeSquared.Models.GameEngine.weIsUpToHere;
+            MazeSquared.Models.GameEngine.activeSquare();
+            var fourthroll = MazeSquared.Models.GameEngine.weIsUpToHere;
 
             //assert
             Assert.AreNotEqual(firstroll,secondroll);
