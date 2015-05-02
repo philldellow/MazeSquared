@@ -25,7 +25,8 @@ namespace MazeSquared
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/JSStyleSheet.css"));
             bundles.Add(new ScriptBundle("~/bundles/Scripts").Include(
                 "~/Scripts/ModelView.js",
                 "~/Scripts/Model.js"));

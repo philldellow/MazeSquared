@@ -1,0 +1,6 @@
+﻿.tile {height: 40px; width: 40px; border: 1px solid black; display: inline-block; margin-left: 7px; background-color: #A0DAE5 } 
+.startActivated { background-color: #ff00ff } 
+.activated { background-color: #f5fffa } 
+.nextedSquare { background-color: #fa8072 } 
+.wrongSquare { background-color: #ff0000 } 
+.gameBoard{background-color : #6EBDBF ;height : 66% ;width : 66% ;border : 3px solid black ;display : block ;margin-left : auto ;margin-right : auto ;text-align : center ;padding-top : 50px ;padding-bottom : 50px ;}

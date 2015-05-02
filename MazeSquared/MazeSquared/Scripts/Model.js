@@ -1,12 +1,10 @@
 ﻿var activeSquare = function () {
-    var addy = "api/GetStart";
+    var addy = "api/GetActiveSquare";
     $.ajax({
         url: addy,
-        method: 'GET',
-        type:'json'
+        Method: 'GET',
     }).done(function (activatedSquare) {
-        console.log("that far");
-            $('.' + activatedSquare).addClass('startActivated');
+        $('.' + activatedSquare).css({ 'background-color': '#f5fffa' }).addClass('Activated').removeClass('deNada');;
         });
 }
 var startSquare = function () {
@@ -15,14 +13,16 @@ var startSquare = function () {
         url: addy,
         Method:'GET'
     }).done(function (gettedStart) {
-        $('div[id="' + gettedStart + '"]').css({ 'background-color': '#f5fffa' }); 
+        $('div[id="' + gettedStart + '"]').addClass('startActivated').removeClass('deNada').css({ 'background-color': 'pink' });
+        console.log(gettedStart + "yo!");
     });
 }
 var nextSquare = function () {
-    $.get({
-        url: "/api/GetNextSquare"
+    $.ajax({
+        url: "/api/GetNextSquare",
+        Method:'GET'
         }).done(function (gettedNextSquare) {
-            $('div[id="' + gettedNextSquare + '"]').css({ 'background-color': '#fa8072' });
+            $('div[id="' + gettedNextSquare + '"]').css({ 'background-color': '#fa8072' }).addClass('nextedSquare').removeClass('deNada');;
     });
 }
 
