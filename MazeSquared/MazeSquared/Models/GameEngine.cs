@@ -34,12 +34,21 @@ namespace MazeSquared.Models
         {
             int weGo = rnd.Next(0, 3);
             List<int> activatedSquare = new List<int>();
-            activatedSquare.Add(weIsUpToHere- 1);
+            activatedSquare.Add(weIsUpToHere - 1);
             activatedSquare.Add(weIsUpToHere + 1);
             activatedSquare.Add(weIsUpToHere + 8);
             activatedSquare.Add(weIsUpToHere - 8);
             
             int low = activatedSquare[weGo];
+                if (low >= 64)
+                {
+                    return weIsUpToHere = low - 8;
+                }
+            if (low <= 0)
+            {
+                return weIsUpToHere = low + 8;
+            }
+
             gameBoard.Remove(low);
             gameBoard.Add(low,"active");
             return weIsUpToHere=low;
@@ -49,13 +58,28 @@ namespace MazeSquared.Models
         {
             int inWeGo = rnd.Next(0, 3);
             List<int> nextedSquare = new List<int>();
-            nextedSquare.Add(activeSquare() - 1);
-            nextedSquare.Add(activeSquare() + 1);
-            nextedSquare.Add(activeSquare() + 8);
-            nextedSquare.Add(activeSquare() - 8);
+            nextedSquare.Add(weIsUpToHere - 1);
+            nextedSquare.Add(weIsUpToHere + 1);
+            nextedSquare.Add(weIsUpToHere + 8);
+            nextedSquare.Add(weIsUpToHere - 8);
             int low = nextedSquare[inWeGo];
+            if (low >= 64)
+            {
+                low = weIsUpToHere - 8;
+                gameBoard.Remove(low);
+                gameBoard.Add(low, "active");
+                return weIsUpToHere = low - 8;
+            }
+            if (low <= 0)
+            {
+                low = weIsUpToHere + 8;
+                gameBoard.Remove(low);
+                gameBoard.Add(low, "active");
+                return weIsUpToHere = low + 8;
+            }
             gameBoard.Remove(low);
             gameBoard.Add(low, "active");
+            
             return weIsUpToHere = low;
         }
 
