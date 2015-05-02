@@ -27,7 +27,8 @@ namespace MazeSquared
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             bundles.Add(new ScriptBundle("~/bundles/Scripts").Include(
-                "~/Scripts/ModelView.js"));
+                "~/Scripts/ModelView.js",
+                "~/Scripts/Model.js"));
         }
     }
 }

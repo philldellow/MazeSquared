@@ -10,7 +10,9 @@ namespace MazeSquared.Controllers
 {
     public class APIController : ApiController
     {
-        // GET api/<controller>
+        // GET api/GetStart
+        [Route("api/GetStart")]
+        [AcceptVerbs("GET")]
         public int GetStart()
         {
             var startSquare = GameEngine.randomStart();
@@ -18,6 +20,8 @@ namespace MazeSquared.Controllers
         }
 
         // GET api/<controller>
+        [Route("api/GetActiveSquare")]
+        [AcceptVerbs("GET")]
         public int GetActiveSquare()
         {
             var activatedSquare = GameEngine.activeSquare();
@@ -25,6 +29,8 @@ namespace MazeSquared.Controllers
         }
 
         // GET api/<controller>
+        [Route("api/GetNextSquare")]
+        [AcceptVerbs("GET")]
         public int GetNextSquare()
         {
             var getNextedSquare = GameEngine.nextSquare();
@@ -32,19 +38,19 @@ namespace MazeSquared.Controllers
         }
 
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
+        //// POST api/<controller>
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //// PUT api/<controller>/5
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<controller>/5
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
