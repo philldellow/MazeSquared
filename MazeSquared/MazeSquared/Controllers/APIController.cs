@@ -46,6 +46,16 @@ namespace MazeSquared.Controllers
             return getNextedSquare;
         }
 
+        // GET api/<controller>
+        [Route("api/Get2ndSquare")]
+        [AcceptVerbs("GET")]
+        public int Get2ndSquare()
+        {
+            var getSecondSquare = GameEngine.internalPartner();
+            return getSecondSquare;
+        }
+
+
 
         //// POST api/<controller>
         //public void Post([FromBody]string value)
