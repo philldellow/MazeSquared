@@ -17,7 +17,7 @@
    
   
     //Action changing class on enter and leave
-    $(".deNada").mouseenter(function() {
+    $("deNada").mouseenter(function() {
         $(this).addClass("wrongSquare").removeClass('deNada');
     });
 

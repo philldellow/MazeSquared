@@ -1,10 +1,10 @@
-﻿var activeSquare = function () {
-    var addy = "api/GetActiveSquare";
+﻿var secondSquare = function () {
+    var addy = "api/Get2ndSquare";
     $.ajax({
         url: addy,
         Method: 'GET',
-    }).done(function (activatedSquare) {
-        $('.' + activatedSquare).addClass('activated').removeClass('deNada');;
+    }).done(function (Get2ndSquare) {
+        $('.' + Get2ndSquare).addClass('activated').removeClass('deNada');;
         });
 }
 var startSquare = function () {
@@ -25,4 +25,13 @@ var nextSquare = function () {
             $('div[id="' + gettedNextSquare + '"]').addClass('nextedSquare').removeClass('deNada');;
     });
 }
+var getActiveSqaure = function () {
+    $.ajax({
+        url: "/api/WhereWeAtNow",
+        Method: 'GET'
+    }).done(function(resultantLocal) {
+        $('div[id="'+resultantLocal+'"]').addClass('startActivated').removeClass('deNada');
+        console.log(resultantLocal ="yup!")
+    });
 
+}
