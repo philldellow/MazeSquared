@@ -96,6 +96,35 @@ namespace MazeSquared.Models
             
             return weIsUpToHere = low;
         }
-
+        
+        public static int internalPartner()
+        {
+            Dictionary<int,int> partner = new Dictionary<int,int>();
+            partner.Add(2,10);
+            partner.Add(3,11);
+            partner.Add(4,12);
+            partner.Add(5,13);
+            partner.Add(6,14);
+            partner.Add(7,15);
+            partner.Add(9,10);
+            partner.Add(17,18);
+            partner.Add(25,26);
+            partner.Add(33,34);
+            partner.Add(41,42);
+            partner.Add(49,50);
+            partner.Add(16,15);
+            partner.Add(24,23);
+            partner.Add(32,31);
+            partner.Add(40,39);
+            partner.Add(48,47);
+            partner.Add(56,55);
+            partner.Add(58,50);
+            partner.Add(59,51);
+            partner.Add(60,52);
+            partner.Add(61,53);
+            partner.Add(62,54);
+            partner.Add(63,55);
+            return partner[weIsUpToHere];
+        }
     }
 }
