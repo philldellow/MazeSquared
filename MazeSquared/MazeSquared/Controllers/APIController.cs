@@ -28,6 +28,15 @@ namespace MazeSquared.Controllers
             return activatedSquare;
         }
 
+        //GET api/<controller>
+        [Route("api/WhereWeAtNow")]
+        [AcceptVerbs("GET")]
+        public int WhereWeIsUpTo()
+        {
+            var whereIsWeUpToNow = GameEngine.weIsUpToHere;
+            return whereIsWeUpToNow;
+        }
+
         // GET api/<controller>
         [Route("api/GetNextSquare")]
         [AcceptVerbs("GET")]

@@ -24,7 +24,6 @@ namespace MazeSquared.Models
 
         public static int randomStart()
         {
-            //int j = rnd.Next(0, 63);
             int j = selectRandomStart();
             gameBoard.Remove(j);
             gameBoard.Add(j,"start");
@@ -41,7 +40,7 @@ namespace MazeSquared.Models
         public static int selectRandomStart()
         {
             int countOfBorderSquares = borderSquares().Count;
-            int r = rnd.Next(0,countOfBorderSquares);
+            int r = rnd.Next(0,countOfBorderSquares-1);
             return borderSquares()[r];
         }
 
