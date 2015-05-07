@@ -1,10 +1,10 @@
 ﻿var secondSquare = function () {
-    var addy = "api/Get2ndSquare";
+    var secondAddy = "api/Get2ndSquare";
     $.ajax({
-        url: addy,
+        url: secondAddy,
         Method: 'GET',
     }).done(function (Get2ndSquare) {
-        $('.' + Get2ndSquare).addClass('activated').removeClass('deNada');;
+        $('div[id="' + Get2ndSquare + '"]').addClass('startActivated').removeClass('deNada');
         });
 }
 var startSquare = function () {
