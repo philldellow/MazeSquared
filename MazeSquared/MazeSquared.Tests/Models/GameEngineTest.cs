@@ -75,9 +75,24 @@ namespace MazeSquared.Tests.Models
             Assert.AreNotEqual(firstroll,secondroll);
             Assert.AreNotEqual(secondroll,thirdroll);
             Assert.AreNotEqual(thirdroll,fourthroll);
-           // Assert.AreNotEqual(fourthroll,firstroll);
+            Assert.AreNotEqual(fourthroll,firstroll);
 
 
         }
+
+        [TestMethod]
+        public void testInternalPartner()
+        {
+        //arrange
+        GameEngine testEngine = new GameEngine();
+        dictionary<int,int> almostactual = testEngine.partner;
+        int together = almostactual[56];
+
+        //act
+        var expected = 55;
+       
+        //Assert
+        Assert.AreEqual( expected, together);
+    }
     }
 }

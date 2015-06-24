@@ -9,8 +9,9 @@
             $('.gameBoard').append("</br>");
         }
     }
-    startSquare();
-    secondSquare();
+
+    $.when(startSquare()).done(function () { secondSquare(); });
+   
     //Action changing class on enter and leave
     $('.deNada').mouseenter(function() {
         $(this).addClass("wrongSquare").removeClass('deNada');

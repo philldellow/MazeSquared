@@ -1,13 +1,4 @@
-﻿var secondSquare = function () {
-    var secondAddy = "api/Get2ndSquare";
-    $.ajax({
-        url: secondAddy,
-        Method: 'GET',
-    }).done(function (Get2ndSquare) {
-        $('div[id="' + Get2ndSquare + '"]').addClass('startActivated').removeClass('deNada');
-        });
-}
-var startSquare = function () {
+﻿var startSquare = function () {
     var addy = "api/GetStart";
     $.ajax({
         url: addy,
@@ -15,6 +6,16 @@ var startSquare = function () {
     }).done(function (gettedStart) {
         $('div[id="' + gettedStart + '"]').addClass('startActivated').removeClass('deNada');
         console.log(gettedStart + "yo!");
+    });
+}
+var secondSquare = function () {
+    var secondAddy = "api/Get2ndSquare";
+    $.ajax({
+        url: secondAddy,
+        Method: 'GET',
+    }).done(function (Get2ndSquare) {
+        $('div[id="' + Get2ndSquare + '"]').addClass('startActivated').removeClass('deNada');
+        console.log(gettedStart + "an dis yo!");
     });
 }
 var nextSquare = function () {
