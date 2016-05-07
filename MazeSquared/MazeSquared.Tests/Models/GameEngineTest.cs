@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MazeSquared.Models;
 
+
 namespace MazeSquared.Tests.Models
 {
     [TestClass]
@@ -85,10 +86,10 @@ namespace MazeSquared.Tests.Models
         {
         //arrange
         GameEngine testEngine = new GameEngine();
-        dictionary<int,int> almostactual = testEngine.partner;
-        int together = almostactual[56];
+        var listOfPartners = MazeSquared.Models.GameEngine.partner;
+       
+        int together = listOfPartners[56];
 
-        //act
         var expected = 55;
        
         //Assert

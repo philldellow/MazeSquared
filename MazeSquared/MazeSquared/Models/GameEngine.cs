@@ -9,8 +9,35 @@ namespace MazeSquared.Models
     public class GameEngine
     {
         public static Dictionary<int, string> gameBoard = new Dictionary<int, string>();
-        public static Dictionary<int, int> partner = new Dictionary<int, int>();
-        
+
+        public static Dictionary<int, int> partner = new Dictionary<int, int>()
+           {
+            {2, 10},
+            {3, 11},
+            {4, 12},
+            {5, 13},
+            {6, 14},
+            {7, 15},
+            {9, 10},
+            {16, 15},
+            {17, 18},
+            {24, 23},
+            {25, 26},
+            {32, 31},
+            {33, 34},
+            {40, 39},
+            {41, 42},
+            {48, 47},
+            {49, 50},
+            {56, 55},
+            {58, 50},
+            {59, 51},
+            {60, 52},
+            {61, 53},
+            {62, 54},
+            {63, 55}
+            };
+
         public static Random rnd = new Random();
         
         public static int weIsUpToHere;
