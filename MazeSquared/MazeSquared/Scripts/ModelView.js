@@ -10,19 +10,33 @@
         }
     }
 
-    $.when(startSquare()).done(function () { secondSquare(); });
-   
+    $.when(startSquare()).done(function () { secondSquare(); 
+        //checkSquare();
     //Action changing class on enter and leave
-    $('.deNada').mouseenter(function() {
-        $(this).addClass("wrongSquare").removeClass('deNada');
+
+        //$('.deNada').mouseenter(function () {
+        //    $(this).addClass('wrongSquare')
+        //});
+
+        //$('.tile').mouseleave(function () {
+        //    $(this).css({ 'background-color': '#1E4035' })
     });
 
-    $('.tile').mouseleave(function () {
-        $(this).css({ 'background-color': '#1E4035' })
+    $('.tile').mouseenter(function () {
+       var selection = ($(this.id));
+       console.log(selection);
+        //checkSquare($(this).id)
+        checkSquare(selection);
+       $(this).addClass('wrongSquare');
     });
-
-  
-});
-
-          
     
+    function changesquarecolourtofail(plsCheckThisSquare) {
+        $('#' + failNumber).addClass('wrongSquare');
+        $('#' + failNumber).removeClass('deNada');
+    };
+
+    function changesqaurecolourtoOK(plsCheckThisSquare) {
+        $('#' + goodNumber).addClass('goodSquare');
+        $('#' + goodNumber).removeClass('deNada','nextedsquare','startActivated');
+    }
+    });

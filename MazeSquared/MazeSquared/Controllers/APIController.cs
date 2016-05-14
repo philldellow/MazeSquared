@@ -16,6 +16,7 @@ namespace MazeSquared.Controllers
         public int GetStart()
         {
             var startSquare = GameEngine.randomStart();
+            GameEngine.createInternalPartner();    
             return startSquare;
         }
 
@@ -50,13 +51,22 @@ namespace MazeSquared.Controllers
         [Route("api/Get2ndSquare")]
         [AcceptVerbs("GET")]
         public int Get2ndSquare()
-        {
-            var getSecondSquare = GameEngine.internalPartner();
-            return getSecondSquare;
+        {         
+                  
+           var getSecondSquare = GameEngine.internalPartner();
+           return getSecondSquare;
         }
 
+         [Route("api/checkSquare")]
+         [AcceptVerbs("GET", "POST")]
+        public bool checkSquare(int checkThisSquare)
+        {
+            return GameEngine.checkSquare(checkThisSquare);
+        }
 
-
+        };
+        //else //errorHandleIt
+        }
         //// POST api/<controller>
         //public void Post([FromBody]string value)
         //{
@@ -71,5 +81,4 @@ namespace MazeSquared.Controllers
         //public void Delete(int id)
         //{
         //}
-    }
-}
+
